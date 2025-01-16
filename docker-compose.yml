@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  fs-handler:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - fs-data:/data/fs-handler
+    environment:
+      - SERVER_PORT=8080
+      - FILESYSTEM_TYPE=local
+      - FILESYSTEM_BASEPATH=/data/fs-handler
+      - FILESYSTEM_ROOT=.
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/v1/fs/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  fs-data:
+    driver: local

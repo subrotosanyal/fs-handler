@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <!-- Exclude test classes -->
+    <Match>
+        <Class name="~.*\.*Test"/>
+    </Match>
+
+    <!-- Exclude generated code -->
+    <Match>
+        <Class name="~.*\.*Builder"/>
+    </Match>
+
+    <!-- Exclude specific bug patterns -->
+    <Match>
+        <Bug pattern="EI_EXPOSE_REP"/>
+    </Match>
+    <Match>
+        <Bug pattern="EI_EXPOSE_REP2"/>
+    </Match>
+</FindBugsFilter>
