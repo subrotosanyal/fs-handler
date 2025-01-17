@@ -27,8 +27,9 @@ A robust and extensible file system abstraction layer that supports both local f
 
 ### Prerequisites
 
-- Java 17 or higher
-- Gradle 8.0 or higher
+- Java 21 (LTS) or higher
+- Gradle 8.5 or higher
+- Docker (optional, for containerization)
 - AWS credentials (for S3 storage)
 
 ### Configuration
@@ -240,4 +241,3 @@ The container includes a health check that:
 3. Commit your changes
 4. Push to the branch
 5. Create a Pull Request
-

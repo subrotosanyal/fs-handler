@@ -1,11 +1,11 @@
 # Build stage
-FROM gradle:8.5-jdk17 AS build
+FROM gradle:8.5-jdk21 AS build
 WORKDIR /app
 COPY . .
 RUN gradle build -x test
 
 # Run stage
-FROM eclipse-temurin:17-jre-jammy
+FROM eclipse-temurin:21-jre-jammy
 WORKDIR /app
 
 # Create directory for file system storage
